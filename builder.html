@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style class="default.css">
+        :root{
+            --mainColor:#eaeaea;
+            --secondaryColor:#fff;
+
+            --borderColor:#c1c1c1;
+
+            --mainText:black;
+            --secondaryText:#4b5156;
+
+            --themeDotborder:#24292e;
+
+            --previewColor:rgba(234,234,234,0.8);
+            --prevShadow:#01426a;
+
+            --polytechnique:rgba(255,255,255,0);
+            --bouncyhover:#01426a;
+            --linkcolor: #01426a;
+        }
+
+
+
+        button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--mainText);
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-size: 56px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+
+        .about{
+            font-size: 40px;
+            padding-top: 20px;
+        }
+
+        .subheading {
+            font-size: 30px;
+            padding-top: 15px;
+            color: black;
+        }
+
+        button:hover {
+            color: var(--bouncyhover);
+            animation: animate 0.6s;
+        }
+
+
+
+        @keyframes animate {
+            25%{
+                transform: scale(0.8,1.3);
+            }
+            50%{
+                transform: scale(1.1,0.8);
+            }
+            75%{
+                transform: scale(0.7,1.2);
+            }
+
+        }
+
+
+
+
+
+
+        html, body{
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        body :not(button) {
+            transition: 0.3s;
+        }
+
+        h1, h2, h3, h4, h5, h6, strong{
+            color: var(--mainText);
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+
+        p, li, span, label, label, input, textarea{
+            font-family: 'Roboto Mono', sans-serif;
+            font-weight: 300;
+            color: var(--mainText);
+        }
+        a{
+            text-decoration: none;
+            color: var(--linkcolor);
+        }
+
+        ul{
+            list-style: none;
+        }
+        h1 {font-size: 56px}
+        h2 {font-size: 36px}
+        h3 {font-size: 28px}
+        h4 {font-size: 24px}
+        h5 {font-size: 20px}
+        h6 {font-size: 16px}
+
+
+        .s1 {
+            background-color: var(--mainColor);
+            border-bottom: 1px solid var(--borderColor);
+        }
+
+
+        .s2 {
+            background-color: var(--secondaryColor);
+            border-bottom: 1px solid var(--borderColor);
+        }
+
+        .main-container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+
+
+        .greet-wrapper {
+            display: grid;
+
+            text-align: center;
+            align-content: center;
+            min-height: 10em;
+        }
+
+        .intro-wrapper {
+            background-color: var(--secondaryColor);
+            border: 1px solid var(--borderColor);
+            -webkit-box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.8);
+            box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.8);
+            border-radius: 10px 10px 0 0;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+        'navi-wrapper navi-wrapper'
+        'left-col right-col';
+        }
+
+        .navi-wrapper {
+            grid-area: navi-wrapper;
+            border-bottom: 1px solid var(--borderColor);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--mainColor);
+        }
+
+        #navigation {
+            margin: 0;
+            padding: 10px;
+        }
+
+        #navigation li{
+            display: inline-block;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        #navigation li:hover{
+            text-shadow: 1.5px 1.5px 1px var(--mainText);
+            opacity: 0.7;
+        }
+
+        .dots-wrapper {
+            display: flex;
+            padding: 10px;
+        }
+
+        #dot1 {
+            background-color: #FC6058;
+        }
+
+        #dot2 {
+            background-color: #FEC02F;
+        }
+
+        #dot3 {
+            background-color: #2ACA3E
+        }
+
+        .browser-dot {
+            background-color: black;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        .left-col {
+            grid-area: left-col;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        #profile-pic{
+            display: Block;
+            margin: 0 auto;
+
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            border: 2px solid var(--borderColor);
+            border-radius: 5px;
+
+            -webkit-box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+            box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+
+        }
+
+        #theme-options-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .theme-dot {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: black;
+
+            margin: 5px;
+            border: 2px solid var(--themeDotborder);
+
+            -webkit-box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+            box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+            cursor: pointer;
+        }
+
+        .theme-dot:hover {
+            animation: darker 0.5s;
+        }
+
+        @keyframes darker {
+            25%{
+                transform: scale(0.8,1.3);
+            }
+            50%{
+                transform: scale(1.1,0.8);
+            }
+            75%{
+                transform: scale(0.7,1.2);
+            }
+
+        }
+
+        #light-mode{
+            background-color: #fff;
+        }
+
+        #blue-mode{
+            background-color: #01426a;
+        }
+
+        #red-mode{
+            background-color: darkred;
+        }
+
+
+        .right-col {
+            grid-area: right-col;
+            display: grid;
+            align-content: center;
+
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        #prev-shadow{
+            background-color: var(--prevShadow);
+            width: 300px;
+            height: 180px;
+            padding-left: 30px;
+            padding-top: 30px;
+            border-radius: 5px;
+        }
+
+        #preview{
+            width: 300px;
+            border: 3px solid var(--prevShadow);
+            background-color: var(--previewColor);
+            padding: 15px;
+            position: relative;
+        }
+
+        .corner {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 3px solid var(--prevShadow);
+            position: absolute;
+        }
+
+        #cornertl {
+            top: -7px;
+            left: -7px;
+        }
+
+        #cornertr {
+            top: -7px;
+            right: -7px;
+        }
+
+        #cornerbl {
+            bottom: -7px;
+            left: -7px;
+        }
+
+        #cornerbr {
+            bottom: -7px;
+            right: -7px;
+        }
+
+        .about-wrapper{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .about-me p{
+            margin-right: 30px;
+        }
+
+        #polytechnique1 {
+            height: 250px;
+            padding-left: 30%;
+            padding-right: 25%;
+            background-color: var(--polytechnique);
+        }
+
+        #skills {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: var(--prevShadow);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        #skills ul li{
+            color: #fff;
+        }
+
+        /* Style all font awesome icons */
+        .fa {
+            padding: 0;
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .social-container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .projects-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 320px);
+            gap: 20px;
+            justify-content: center;
+            padding-bottom: 50px;
+        }
+
+        .project-img {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .project{
+            border: 1px solid var(--borderColor);
+
+            -webkit-box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+            box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.7);
+
+        }
+
+        .post-preview{
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .post-title{
+            color: var(--mainText);
+            margin: 0;
+        }
+        .post-intro {
+            color: black;
+        }
+
+        #jobs{
+            color: var(--bouncyhover);
+        }
+
+        #jobs2{
+            color: var(--bouncyhover);
+        }
+
+        #jobs3{
+            color: var(--bouncyhover);
+        }
+        .post-preview li{
+            display: inline-block;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .post-preview li:hover{
+            text-shadow: 1.5px 1.5px 1px var(--mainText);
+            opacity: 0.7;
+
+            cursor: pointer;
+        }
+
+        .education-experience-wrapper {
+            display: grid;
+            grid-template-rows: repeat(auto-fit, 1fr);
+            gap: 20px;
+            padding-bottom: 50px;
+            position: relative;
+
+        }
+
+        .education-experience-img {
+            display: inline-block;
+            width: 200px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .education-experience{
+            border: 1px solid var(--borderColor);
+            background-color: white;
+
+            -webkit-box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+            box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.7);
+
+        }
+
+        .education-experience-preview{
+            display: inline-block;
+            background-color: #fff;
+            position: absolute;
+
+        }
+
+        .education-experience-preview li{
+            display: inline-block;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .education-experience-preview li:hover{
+            text-shadow: 1.5px 1.5px 1px var(--mainText);
+            opacity: 0.7;
+
+            cursor: pointer;
+        }
+
+        .education-experience-title{
+            padding-left: 20px;
+        }
+
+        .education-experience-intro{
+            color: black;
+            padding-left: 20px;
+        }
+        #contact-form{
+            display: block;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid var(--borderColor);
+            padding: 15px;
+            border-radius: 5px;
+            background-color: var(--mainColor);
+            margin-bottom: 50px;
+
+        }
+
+        #contact-form label{
+            line-height: 2.7em;
+        }
+
+        #contact-form textarea{
+            min-height: 100px;
+        }
+        .input-field{
+            width: 100%;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            background-color: var(--secondaryColor);
+            border-radius: 5px;
+            border: 1px solid var(--borderColor);
+        }
+
+        #submit-btn {
+            margin-top: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 100%;
+            color: #fff;
+            background-color: var(--prevShadow);
+            border: 1px solid transparent;
+        }
+
+        #submit-btn:hover {
+            border: 1px solid var(--borderColor);
+        }
+
+
+        @media screen and (max-width: 1200px){
+            .main-container {
+                width: 95%;
+            }
+        }
+
+
+        @media screen and (max-width: 1200px){
+            .main-container {
+                width: 95%;
+            }
+        }
+
+
+        @media screen and (max-width: 800px){
+            .intro-wrapper {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+        'navi-wrapper'
+        'left-col'
+        'right-col';
+            }
+            .right-col{
+                justify-content: center;
+            }
+            button{
+                font-size: 36px;
+            }
+            .education-experience-wrapper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 320px) !important;
+                gap: 20px;
+                justify-content: center !important;
+                padding-bottom: 50px;
+            }
+
+            .education-experience-img {
+                display: block !important;
+                width: 100% !important;
+                height: 180px !important;
+                object-fit: cover !important;
+            }
+
+            .education-experience{
+                border: 1px solid var(--borderColor);
+
+                -webkit-box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.8);
+                box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.7);
+
+            }
+
+            .education-experience-preview{
+                background-color: #fff;
+                padding: 15px;
+                position: static !important;
+            }
+
+            .education-experience-title{
+                color: var(--mainText);
+                margin: 0;
+            }
+            .education-experience-intro {
+                color: black;
+            }
+
+            .education-experience-preview li{
+                display: inline-block;
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+
+            .education-experience-preview li:hover{
+                text-shadow: 1.5px 1.5px 1px var(--mainText);
+                opacity: 0.7;
+
+                cursor: pointer;
+            }
+
+
+        }
+
+        @media(hover: hover) and (pointer: fine) {
+            button:hover {
+                color: var(--bouncyhover);
+                animation: animate 0.6s;
+            }
+        }
+    </style>
+    <script>
+        //modify html through the json object of information
+
+        var output = document.getElementById('about-short')
+        output.innerHTML = informations[0].about
+    </script>
+    <title> Adithya Ravichandran </title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link id="theme-style" rel="stylesheet" type="text/css" class="">
+</head>
+
+<body>
+
+<section class="s1">
+    <div class="main-container">
+        <div class="greet-wrapper">
+            <div class="A">
+                <div class="B">
+                    <button>H</button><button>i,</button>&nbsp;
+                    <button> I'</button><button>m</button>&nbsp;
+                    <button> A</button><button>d</button><button>i</button><button>t</button><button>h</button><button>y</button><button>a</button>&nbsp;
+                    <button>R</button><button>a</button><button>v</button><button>i</button><button>c</button><button>h</button><button>a</button><button>n</button><button>d</button><button>r</button><button>a</button><button>n</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="intro-wrapper">
+            <div class="navi-wrapper">
+                <div class="dots-wrapper">
+                    <div id="dot1" class="browser-dot"></div>
+                    <div id="dot2" class="browser-dot"></div>
+                    <div id="dot3" class="browser-dot"></div>
+                </div>
+
+                <ul id="navigation">
+                    <li><a href="#about_me">About me</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact-form">Contact</a></li>
+                    <li><a target="_blank" href="../Adithya_Ravichandran_CV.pdf">Résumé</a></li>
+                </ul>
+            </div>
+            <div class="left-col">
+                <img id="profile-pic" src="../profile_pic.jpeg">
+                <p style="text-align: center;line-height: 0; font-weight: 900; padding-top: 20px;">Personalize Theme</p>
+                <div id="theme-options-wrapper">
+                    <div data-mode="light" id="light-mode" class="theme-dot"></div>
+                    <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+                    <div data-mode="red" id="red-mode" class="theme-dot"></div>
+                </div>
+            </div>
+            <div class="right-col">
+                <div id="prev-shadow">
+                    <div id="preview">
+                        <div id="cornertl" class="corner"></div>
+                        <div id="cornertr" class="corner"></div>
+                        <button class="about">W</button><button class="about">h</button><button class="about">a</button><button class="about">t</button>&nbsp;
+                        <button class="about">I</button>&nbsp;
+                        <button class="about">d</button><button class="about">o</button>
+                        <p id="about-short"></p>
+                        <div id="cornerbl" class="corner"></div>
+                        <div id="cornerbr" class="corner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s2">
+    <div id="about_me" class="main-container">
+        <div class="about-wrapper">
+            <div class="about-me">
+                <button class="about">A</button><button class="about">b</button><button class="about">o</button><button class="about">u</button><button class="about">t</button>&nbsp;
+                <button class="about">m</button><button class="about">e</button>
+
+                <p>I am a Mathematics and Computer Science double major studying
+                    at Ecole Polytechnique in Paris. I love Mathematical problem-solving
+                    and taking on various projects and challenges to keep myself engaged.</p>
+
+                <p>########### Add some interesting text here to keep Adithya's reader engaged ###############</p>
+
+                <img id="polytechnique1" src="../ecole_polytechnique_logo.png">
+            </div>
+            <div class="social-links">
+                <button class="about">S</button><button class="about">k</button><button class="about">i</button><button class="about">l</button><button class="about">l</button><button class="about">s</button>
+
+
+
+                <p>Student with primary skills in Data Science with Python (numpy, pandas, matplotlib):</p>
+                <div id="skills">
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>HTML5</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <ul>
+                        <li>Public Speaking / Debate</li>
+                        <li>Model UN</li>
+                        <li>Cricket</li>
+                        <li>Running</li>
+                        <li>Badminton</li>
+                    </ul>
+                </div>
+
+                <hr>
+
+                <button class="about">S</button><button class="about">o</button><button class="about">c</button><button class="about">i</button><button class="about">a</button><button class="about">l</button>&nbsp;
+                <button class="about">M</button><button class="about">e</button><button class="about">d</button><button class="about">i</button><button class="about">a</button>
+
+                <p>Find me on Social Media and don't hesitate to reach out to me on any of the following platforms:</p>
+                <div class="social-container">
+                    <ul class="social-icons">
+                        <a target="_blank" href="https://www.instagram.com/ad1thya_r/"><i class="fa fa-instagram"></i></a><a target="_blank" href="https://github.com/Ad1thya-R"><i class="fa fa-github"></i></a><a target="_blank" href="https://www.linkedin.com/in/adithya-ravichandran/"><i class="fa fa-linkedin"></i></a>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="s1">
+    <div class="main-container">
+        <div id="project"  class="greet-wrapper">
+            <div class="A">
+                <div class="B">
+                    <button class="about">P</button><button class="about">r</button><button class="about">o</button><button class="about">j</button><button class="about">e</button><button class="about">c</button><button class="about">t</button><button class="about">s</button>
+                </div>
+            </div>
+        </div>
+        <div class="projects-wrapper">
+            <div class="project">
+                <img class="project-img"  src="../profile_pic.jpeg">
+                <div class="post-preview">
+                    <div class="post-title">
+                        <button class="subheading">D</button><button class="subheading">a</button><button class="subheading">t</button><button class="subheading">a</button>
+                        <button class="subheading">S</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">c</button><button class="subheading">e</button>
+                    </div>
+                    <p class="post-intro">This is a sentence. Some more text.</p>
+                    <li><a href="#">See more / Download</a></li>
+                </div>
+            </div>
+            <div class="project">
+                <img class="project-img"  src="../profile_pic.jpeg">
+                <div class="post-preview">
+                    <div class="post-title">
+                        <button class="subheading">S</button><button class="subheading">t</button><button class="subheading">a</button><button class="subheading">r</button><button class="subheading">l</button><button class="subheading">i</button><button class="subheading">n</button><button class="subheading">k</button>
+                    </div>
+                    <p class="post-intro">This is a sentence. Some more text.</p>
+                    <li><a href="#">See more / Download</a></li>
+                </div>
+            </div>
+            <div class="project">
+                <img class="project-img"  src="../profile_pic.jpeg">
+                <div class="post-preview">
+                    <div class="post-title">
+                        <button class="subheading">T</button><button class="subheading">h</button><button class="subheading">e</button>
+                        <button class="subheading">F</button><button class="subheading">i</button><button class="subheading">r</button><button class="subheading">s</button><button class="subheading">t</button>
+                        <button class="subheading">M</button><button class="subheading">a</button><button class="subheading">r</button><button class="subheading">t</button><button class="subheading">i</button><button class="subheading">a</button><button class="subheading">n</button>
+                    </div>
+                    <p class="post-intro">This is a sentence. Some more text.</p>
+                    <li><a href="#">See more / Download</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="s2">
+    <div id="education" class="main-container">
+        <div class="greet-wrapper">
+            <div class="A">
+                <div class="B">
+                    <button class="about">E</button><button class="about">d</button><button class="about">u</button><button class="about">c</button><button class="about">a</button><button class="about">t</button><button class="about">i</button><button class="about">o</button><button class="about">n</button>
+                </div>
+            </div>
+        </div>
+        <div class="education-experience-wrapper">
+            <div class="education-experience">
+                <img id=#img1 class="education-experience-img"  src="../profile_pic.jpeg">
+                <div class="education-experience-preview">
+                    <div id=post-1-title class="education-experience-title">
+                        <button class="subheading">D</button><button class="subheading">a</button><button class="subheading">t</button><button class="subheading">a</button>
+                        <button class="subheading">S</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">c</button><button class="subheading">e</button>
+                    </div>
+                    <p id="post-1-intro" class="education-experience-intro">This is a sentence. Some more text.</p>
+                    <li><a href="#">See more / Download</a></li>
+                </div>
+            </div>
+            <div class="education-experience">
+                <img class="education-experience-img"  src="../profile_pic.jpeg">
+                <div class="education-experience-preview">
+                    <div id="post-2-title" class="education-experience-title">
+                        <button class="subheading">D</button><button class="subheading">a</button><button class="subheading">t</button><button class="subheading">a</button>
+                        <button class="subheading">S</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">c</button><button class="subheading">e</button>
+                    </div>
+                    <p id="post-2-intro" class="education-experience-intro">This is a sentence. Some more text.
+                        This is a sentence. Some more text. This is a sentence. Some more text.
+                        This is a sentence. Some more text.</p>
+                    <li><a href="#">See more / Download</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s1">
+    <div  id="experience" class="main-container">
+        <div class="greet-wrapper">
+            <div class="A">
+                <div class="B">
+                    <button class="about">E</button><button class="about">x</button><button class="about">p</button><button class="about">e</button><button class="about">r</button><button class="about">i</button><button class="about">e</button><button class="about">n</button><button class="about">c</button><button class="about">e</button>
+                </div>
+            </div>
+        </div>
+        <div class="projects-wrapper">
+            <div class="project">
+                <img class="project-img"  src="../Sphere.jpg">
+                <div class="post-preview">
+                    <div class="post-title">
+                        <button class="subheading">S</button><button class="subheading">p</button><button class="subheading">h</button><button class="subheading">e</button><button class="subheading">r</button><button class="subheading">e</button>
+                        <button class="subheading">A</button><button class="subheading">P</button><button class="subheading">I</button>
+                    </div>
+                    <p id="jobs" class="post-intro">Role: Co-Founder and COO</p>
+                    <p class="post-intro">This is a sentence. Some more text.</p>
+                    <li><a target="_blank" href="https://sphereapi.io/">See more</a></li>
+                </div>
+            </div>
+            <div class="project">
+                <img class="project-img"  src="../ascientia.png">
+                <div class="post-preview">
+                    <div class="post-title">
+                        <button class="subheading">A</button><button class="subheading">s</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">t</button><button class="subheading">i</button><button class="subheading">a</button>
+                    </div>
+                    <p id="jobs2" class="post-intro">Role: IB Tutor</p>
+                    <p class="post-intro">This is a sentence. Some more text.</p>
+                    <li><a target="_blank"  href="https://ascientia.org/">See more</a></li>
+                </div>
+            </div>
+            <div class="project">
+                <img class="project-img"  src="../luxmun.jpeg">
+                <div class="post-preview">
+                    <div class="post-title">
+                        <button class="subheading">L</button><button class="subheading">U</button><button class="subheading">X</button><button class="subheading">M</button><button class="subheading">U</button><button class="subheading">N</button>
+                    </div>
+                    <p id="jobs3" class="post-intro">Role: Co-Founder and Treasurer</p>
+                    <p class="post-intro">This is a sentence. Some more text.</p>
+                    <li><a target="_blank"  href="https://instagram.com/lux_mun/?hl=en">See more</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s2">
+    <div class="main-container">
+        <div class="greet-wrapper">
+            <div class="A">
+                <div class="B">
+                    <button class="about">G</button><button class="about">e</button><button class="about">t</button>
+                    <button class="about">i</button><button class="about">n</button>
+                    <button class="about">t</button><button class="about">o</button><button class="about">u</button><button class="about">c</button><button class="about">h</button>
+                </div>
+            </div>
+        </div>
+
+        <form id="contact-form" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xknyqvdb" method="post">
+            <fieldset id="fs-frm-inputs">
+                <label for="full-name">Full Name</label>
+                <input class="input-field" type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                <label for="email-address">Email Address</label>
+                <input  class="input-field" type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+                <label for="message">Message</label>
+                <textarea  class="input-field" rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+                <input  class="input-field" type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            </fieldset>
+            <p>
+                <input id="submit-btn" type="submit" value="Submit">
+            </p>
+        </form>
+
+    </div>
+</section>
+</body>
+
+</html>

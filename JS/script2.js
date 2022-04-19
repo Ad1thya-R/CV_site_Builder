@@ -28,22 +28,19 @@ for (var i=0; themeDots.length > i; i++){
 
 function setTheme(mode){
     if(mode == 'light'){
-        document.getElementById('theme-style').id = 'default.css'
+        document.getElementById('theme-style').href = 'default.css'
     }
 
     if(mode == 'blue'){
-        document.getElementById('theme-style').id = 'blue.css'
+        document.getElementById('theme-style').href = 'blue.css'
     }
 
     if(mode == 'red'){
-        document.getElementById('theme-style').id = 'red.css'
+        document.getElementById('theme-style').href = 'red.css'
     }
 
 
     localStorage.setItem('theme', mode)
 }
 
-//modify html through the json object of information
 
-var output = document.getElementById('about-short')
-output.innerHTML = informations[0].about

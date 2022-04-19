@@ -29,15 +29,16 @@
                         <button> I'</button><button>m</button>&nbsp;
                     </div>
                     <script>
-                        for (var i = 0; i < CV[0].name.length; i++) {
-                            if (CV[0].name[i]===' '){
+                        for (var i = 0; i < CV[CV.length-1].name.length; i++) {
+                            if (CV[CV.length-1].name[i]===' '){
                                 var div = document.getElementById("whole-name");
+                                div.appendChild( document.createTextNode( '\u00A0' ) );
                                 div.appendChild( document.createTextNode( '\u00A0' ) );
                             }
                             else {
                                 var div = document.getElementById("whole-name");
                                 let btn = document.createElement("button");
-                                btn.innerHTML= CV[0].name[i];
+                                btn.innerHTML= CV[CV.length-1].name[i];
                                 div.appendChild(btn);
                             }
                         }
@@ -81,7 +82,7 @@
                             <p id="about-short"></p>
                             <script>
                                 var about = document.getElementById('about-short')
-                                about.innerHTML=CV[0].about
+                                about.innerHTML=CV[CV.length-1].about
                             </script>
                             <div id="cornerbl" class="corner"></div>
                             <div id="cornerbr" class="corner"></div>
@@ -99,35 +100,43 @@
                     <button class="about">A</button><button class="about">b</button><button class="about">o</button><button class="about">u</button><button class="about">t</button>&nbsp;
                     <button class="about">m</button><button class="about">e</button>
 
-                    <p>I am a Mathematics and Computer Science double major studying
+                    <p id="about-long">I am a Mathematics and Computer Science double major studying
                         at Ecole Polytechnique in Paris. I love Mathematical problem-solving
                         and taking on various projects and challenges to keep myself engaged.</p>
-
-                    <p>########### Add some interesting text here to keep Adithya's reader engaged ###############</p>
-
                     <img id="polytechnique1" src="Other/ecole_polytechnique_logo.png">
+                    <script>
+                        var aboutlong = document.getElementById('about-long')
+                        aboutlong.innerHTML=CV[CV.length-1].aboutlong
+                    </script>
                 </div>
                 <div class="social-links">
                     <button class="about">S</button><button class="about">k</button><button class="about">i</button><button class="about">l</button><button class="about">l</button><button class="about">s</button>
 
-
-
-                    <p>Student with primary skills in Data Science with Python (numpy, pandas, matplotlib):</p>
+                    <p>My primary skills that I apply on nearly a day to day basis are:</p>
                     <div id="skills">
-                        <ul>
-                            <li>Python</li>
-                            <li>SQL</li>
-                            <li>HTML5</li>
-                            <li>CSS</li>
-                            <li>Javascript</li>
+                        <ul id="skills1">
+
                         </ul>
-                        <ul>
-                            <li>Public Speaking / Debate</li>
-                            <li>Model UN</li>
-                            <li>Cricket</li>
-                            <li>Running</li>
-                            <li>Badminton</li>
+                        <ul id="skills2">
+
                         </ul>
+                        <script>
+                            for (var i=0; i<10; i++) {
+                                if (i<5) {
+                                    var skills1 = document.getElementById('skills1');
+                                    let list = document.createElement("li");
+                                    list.innerHTML=CV[CV.length-1].skilllist.split(",")[i];
+                                    skills1.appendChild(list)
+                                }
+                                else {
+                                    var skills2 = document.getElementById('skills2');
+                                    let list = document.createElement("li");
+                                    list.innerHTML=CV[CV.length-1].skilllist.split(",")[i];
+                                    skills2.appendChild(list)
+                                }
+                            }
+
+                        </script>
                     </div>
 
                     <hr>

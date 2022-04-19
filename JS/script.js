@@ -5,8 +5,9 @@ const addInfo = (ev)=>{
     let information = {
         id: Date.now(),
         name: document.getElementById('name').value,
-        about: document.getElementById('about').value
-
+        about: document.getElementById('about').value,
+        aboutlong: document.getElementById('aboutlong').value,
+        skilllist: document.getElementById('skilllist').value
     }
     informations.push(information);
     document.forms[0].reset(); // to clear the form for the next entries

@@ -4,6 +4,8 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #contact-form{
@@ -32,6 +34,7 @@ body {
 
 .section {
     text-align: center;
+    padding: 10px;
 }
 
 
@@ -79,7 +82,7 @@ body {
 }
 
 .extend {
-    width: 300px;
+    width: 400px;
 }
 
 .input:focus ~ .cut,
@@ -130,6 +133,11 @@ body {
     text-align: center;
     width: 100%;
 }
+
+.submit:hover {
+    opacity: 0.85;
+}
+
 .long {
     height:150px;
 }

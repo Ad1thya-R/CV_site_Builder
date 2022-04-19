@@ -15,26 +15,31 @@
 
 <body>
     <form id="contact-form">
-        <div class="formBox">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Name"/>
+        <div class="title">CV Builder</div>
+        <div class="subtitle">Let's create your personalised CV website!</div>
+        <div class="input-container ic1">
+            <input id="name" class="input" type="text" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="name" class="placeholder">Full name</label>
         </div>
-        <div class="formBox">
-            <label for="about">What you do</label>
-            <input type="text" id="about" placeholder="Describe what you do in one sentence">
+        <div class="input-container ic2">
+            <input id="about" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="about" class="placeholder">What do you do?</label>
         </div>
-        <div class="formBox">
-            <label for="about-long">About Me</label>
-            <textarea type="text" id="about-long" placeholder="About"></textarea>
+        <div class="input-container ic2">
+            <input id="email" class="input" type="text" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="email" class="placeholder">Email</label>
         </div>
-        <div class="formBox">
-            <button id="btn">Click to Add</button>
-        </div>
-        <p><a target="_blank" href="/built.html">Access CV site</a></p>
-
+        <button id="btn" type="text" class="submit">submit</button>
         <div id="msg">
             <pre></pre>
         </div>
+        <form>
+            <button type="text" formaction="/built.html" class="submit">Access your CV site now!</button>
+        </form>
+
     </form>
 </body>
 

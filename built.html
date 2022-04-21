@@ -63,7 +63,12 @@
                     </ul>
                 </div>
                 <div class="left-col">
-                    <img id="profile-pic" src="Other/profile_pic.jpeg">
+                    <img id="profile-pic" class="profile-pic" src="">
+                    <script>
+                        let profilephoto = JSON.parse(localStorage.getItem('profilephoto'))
+                        let profileimg = document.getElementById('profile-pic')
+                        profileimg.src=profilephoto
+                    </script>
                     <p style="text-align: center;line-height: 0; font-weight: 900; padding-top: 20px;">Personalize Theme</p>
                     <div id="theme-options-wrapper">
                         <div data-mode="light" id="light-mode" class="theme-dot"></div>
@@ -103,10 +108,14 @@
                     <p id="about-long">I am a Mathematics and Computer Science double major studying
                         at Ecole Polytechnique in Paris. I love Mathematical problem-solving
                         and taking on various projects and challenges to keep myself engaged.</p>
-                    <img id="polytechnique1" src="Other/ecole_polytechnique_logo.png">
+                    <img id="aboutphoto" class="profile-pic" src="">
                     <script>
                         var aboutlong = document.getElementById('about-long')
                         aboutlong.innerHTML=CV[CV.length-1].aboutlong
+
+                        let aboutphoto = JSON.parse(localStorage.getItem('aboutphoto'))
+                        let aboutimg = document.getElementById('aboutphoto')
+                        aboutimg.src=aboutphoto
                     </script>
                 </div>
                 <div class="social-links">

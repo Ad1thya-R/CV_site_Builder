@@ -1,3 +1,29 @@
+function changeHandler(evt, id) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    // FileList object.
+    var files = evt.target.files;
+
+    var file = files[0];
+
+    var fileReader = new FileReader();
+
+
+    fileReader.onload = function(progressEvent) {
+        var url = fileReader.result;
+
+        // Something like: data:image/png;base64,iVBORw...Ym57Ad6m6uHj96js
+        console.log(url);
+        //
+        localStorage.setItem(id, JSON.stringify(fileReader.result))
+    }
+
+
+    // Read file asynchronously.
+    fileReader.readAsDataURL(file); // fileReader.result -> URL.
+}
+
 let informations = [];
 // example {id:1592304983049, title: 'Deadpool', year: 2015}
 const addInfo = (ev)=>{
@@ -7,7 +33,10 @@ const addInfo = (ev)=>{
         name: document.getElementById('name').value,
         about: document.getElementById('about').value,
         aboutlong: document.getElementById('aboutlong').value,
-        skilllist: document.getElementById('skilllist').value
+        skilllist: document.getElementById('skilllist').value,
+        social1: document.getElementById('social1').value,
+        social2: document.getElementById('social2').value,
+        social3: document.getElementById('social3').value,
     }
     informations.push(information);
     document.forms[0].reset(); // to clear the form for the next entries
@@ -24,5 +53,9 @@ const addInfo = (ev)=>{
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addInfo);
 });
+
+
+
+
 
 

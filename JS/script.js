@@ -37,6 +37,14 @@ const addInfo = (ev)=>{
         social1: document.getElementById('social1').value,
         social2: document.getElementById('social2').value,
         social3: document.getElementById('social3').value,
+        project1: document.getElementById('project1').value,
+        project2: document.getElementById('project2').value,
+        project3: document.getElementById('project3').value,
+        education1: document.getElementById('education1').value,
+        education2: document.getElementById('education2').value,
+        experience1: document.getElementById('experience1').value,
+        experience2: document.getElementById('experience2').value,
+        experience3: document.getElementById('experience3').value,
     }
     informations.push(information);
     document.forms[0].reset(); // to clear the form for the next entries

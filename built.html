@@ -59,7 +59,6 @@
                         <li><a href="#education">Education</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#contact-form">Contact</a></li>
-                        <li><a target="_blank" href="Other/Adithya_Ravichandran_CV.pdf">Résumé</a></li>
                     </ul>
                 </div>
                 <div class="left-col">
@@ -156,7 +155,27 @@
                     <p>Find me on Social Media and don't hesitate to reach out to me on any of the following platforms:</p>
                     <div class="social-container">
                         <ul class="social-icons">
-                            <a target="_blank" href="https://www.instagram.com/ad1thya_r/"><i class=""></i></a><a target="_blank" href="https://github.com/Ad1thya-R"><i class=""></i></a><a target="_blank" href="https://www.linkedin.com/in/adithya-ravichandran/"><i class="fa fa-linkedin"></i></a>
+                            <a id="social1" target="_blank" href=""></a><a id="social2" target="_blank" href=""></a><a id="social3" target="_blank" href=""></a>
+                            <script>
+                                var social11 = document.getElementById('social1');
+                                var social22 = document.getElementById('social2');
+                                var social33 = document.getElementById('social3');
+
+                                social11.href=CV[CV.length-1].social1.split(",")[1];
+                                social22.href=CV[CV.length-1].social2.split(",")[1];
+                                social33.href=CV[CV.length-1].social3.split(",")[1];
+
+                                let i1 = document.createElement("i");
+                                let i2 = document.createElement("i");
+                                let i3 = document.createElement("i");
+
+                                social11.appendChild(i1).className = "fa fa-"+CV[CV.length-1].social1.split(",")[0];
+                                social22.appendChild(i2).className = "fa fa-"+CV[CV.length-1].social2.split(",")[0];
+                                social33.appendChild(i3).className = "fa fa-"+CV[CV.length-1].social3.split(",")[0];
+
+
+
+                            </script>
                         </ul>
                     </div>
                 </div>

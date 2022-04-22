@@ -431,12 +431,12 @@ h6 {font-size: 16px}
     gap: 20px;
     padding-bottom: 50px;
     position: relative;
-
 }
 
 .education-experience-img {
     display: inline-block;
     width: 200px;
+    min-height: 150px;
     height: 100%;
     object-fit: cover;
 }

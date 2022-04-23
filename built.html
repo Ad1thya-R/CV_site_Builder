@@ -12,7 +12,7 @@
     </script>
     <title></title>
     <script>
-        document.title=CV[CV.length-1].name
+        document.title=CV[CV.length-1].name+"'s Portfolio"
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
@@ -237,7 +237,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <img id="project2" class="project-img"  src="Other/profile_pic.jpeg">
+                    <img id="project2" class="project-img"  src="">
                     <script>
                         let project2photo = JSON.parse(localStorage.getItem('project2photo'))
                         let project2img = document.getElementById('project2')
@@ -276,7 +276,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <img id="project3" class="project-img"  src="Other/profile_pic.jpeg">
+                    <img id="project3" class="project-img"  src="">
                     <script>
                         let project3photo = JSON.parse(localStorage.getItem('project3photo'))
                         let project3img = document.getElementById('project3')
@@ -330,36 +330,81 @@
             </div>
             <div class="education-experience-wrapper">
                 <div class="education-experience">
-                    <img id="education1" class="education-experience-img"  src="Other/profile_pic.jpeg">
+                    <img id="education1photo" class="education-experience-img"  src="">
                     <script>
                         let education1photo = JSON.parse(localStorage.getItem('education1photo'))
-                        let education1img = document.getElementById('education1')
+                        let education1img = document.getElementById('education1photo')
                         education1img.src=education1photo
                     </script>
                     <div class="education-experience-preview">
-                        <div id=post-1-title class="education-experience-title">
+                        <div id="education1name" class="education-experience-title">
 
                         </div>
-                        <p id="post-1-intro" class="education-experience-intro">This is a sentence. Some more text.</p>
-                        <li><a href="">See more / Download</a></li>
+                        <script>
+                            let education1list = CV[CV.length-1].education1.split(",");
+                            for (var i = 0; i < education1list[0].length; i++) {
+                                var div = document.getElementById("education1name");
+                                if (CV[CV.length-1].education1.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].education1.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="education1description" class="education-experience-intro"></p>
+                        <script>
+                            var education1desc = document.getElementById('education1description');
+                            education1desc.innerHTML=CV[CV.length-1].education1.split(",")[1];
+                        </script>
+                        <li><a id="education1link" href="">See more / Download</a></li>
+                        <script>
+                            var education1link = document.getElementById('education1link');
+                            education1link.href=CV[CV.length-1].education1.split(",")[2];
+                        </script>
                     </div>
                 </div>
                 <div class="education-experience">
-                    <img id="education2" class="education-experience-img"  src="Other/profile_pic.jpeg">
+                    <img id="education2photo" class="education-experience-img"  src="">
                     <script>
                         let education2photo = JSON.parse(localStorage.getItem('education2photo'))
-                        let education2img = document.getElementById('education2')
+                        let education2img = document.getElementById('education2photo')
                         education2img.src=education2photo
                     </script>
                     <div class="education-experience-preview">
-                        <div id="post-2-title" class="education-experience-title">
-                            <button class="subheading">D</button><button class="subheading">a</button><button class="subheading">t</button><button class="subheading">a</button>
-                            <button class="subheading">S</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">c</button><button class="subheading">e</button>
+                        <div id="education2name" class="education-experience-title">
+
                         </div>
-                        <p id="post-2-intro" class="education-experience-intro">This is a sentence. Some more text.
-                            This is a sentence. Some more text. This is a sentence. Some more text.
-                            This is a sentence. Some more text.</p>
-                        <li><a href="#">See more / Download</a></li>
+                        <script>
+                            let education2list = CV[CV.length-1].education2.split(",");
+                            for (var i = 0; i < education2list[0].length; i++) {
+                                var div = document.getElementById("education2name");
+                                if (CV[CV.length-1].education2.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].education2.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="education2description" class="education-experience-intro"></p>
+                        <script>
+                            var education2desc = document.getElementById('education2description');
+                            education2desc.innerHTML=CV[CV.length-1].education2.split(",")[1];
+                        </script>
+                        <li><a id="education2link" href="">See more / Download</a></li>
+                        <script>
+                            var education2link = document.getElementById('education2link');
+                            education2link.href=CV[CV.length-1].education2.split(",")[2];
+                        </script>
                     </div>
                 </div>
             </div>
@@ -377,7 +422,7 @@
             </div>
             <div class="projects-wrapper">
                 <div class="project">
-                    <img id="experience1" class="project-img"  src="Other/profile_pic.jpeg">
+                    <img id="experience1" class="project-img"  src="">
                     <script>
                         let experience1photo = JSON.parse(localStorage.getItem('experience1photo'))
                         let experience1img = document.getElementById('experience1')
@@ -416,7 +461,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <img id="experience2" class="project-img"  src="Other/profile_pic.jpeg">
+                    <img id="experience2" class="project-img"  src="">
                     <script>
                         let experience2photo = JSON.parse(localStorage.getItem('experience2photo'))
                         let experience2img = document.getElementById('experience2')
@@ -455,7 +500,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <img id="experience3" class="project-img"  src="Other/profile_pic.jpeg">
+                    <img id="experience3" class="project-img"  src="">
                     <script>
                         let experience3photo = JSON.parse(localStorage.getItem('experience3photo'))
                         let experience3img = document.getElementById('experience3')
@@ -509,7 +554,11 @@
                 </div>
             </div>
 
-            <form id="contact-form" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xknyqvdb" method="post">
+            <form id="contact-form" name="simple-contact-form" accept-charset="utf-8" action="" method="post">
+                <script>
+                    var form = document.getElementById('contact-form')
+                    form.action=CV[CV.length-1].formspree
+                </script>
                 <fieldset id="fs-frm-inputs">
                     <label for="full-name">Full Name</label>
                     <input class="input-field" type="text" name="name" id="full-name" placeholder="First and Last" required="">

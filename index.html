@@ -123,6 +123,12 @@
             <label for="experience3" class="placeholder">Experience #3: name, description, link</label>
         </div>
         <input id="experience3photo" class="input" type="file" onchange="changeHandler(event, 'experience3photo')" accept=".png, .jpeg, .jpg, .svg" placeholder=" " />
+        <div class="subtitle section">To have a working contact form, please register on <a href="https://formspree.io/">Formspree</a> and register your email, and paste the formid link below.</div>
+        <div class="input-container ic2">
+            <textarea id="formspree" class="input" type="text" placeholder=" " ></textarea>
+            <div class="cut extend"></div>
+            <label for="formspree" class="placeholder">Paste your formspree id link here.</label>
+        </div>
         <button id="btn"  class="submit">Submit</button>
         <div id="msg">
             <pre></pre>

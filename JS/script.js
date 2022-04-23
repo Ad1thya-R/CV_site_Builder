@@ -45,6 +45,7 @@ const addInfo = (ev)=>{
         experience1: document.getElementById('experience1').value,
         experience2: document.getElementById('experience2').value,
         experience3: document.getElementById('experience3').value,
+        formspree: document.getElementById('formspree').value,
     }
     informations.push(information);
     document.forms[0].reset(); // to clear the form for the next entries

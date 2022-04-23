@@ -211,21 +211,29 @@
                         <script>
                             let project1list = CV[CV.length-1].project1.split(",");
                             for (var i = 0; i < project1list[0].length; i++) {
+                                var div = document.getElementById("project1name");
                                 if (CV[CV.length-1].project1.split(",")[0][i]===' '){
-                                    var div = document.getElementById("project1name");
                                     div.appendChild( document.createTextNode( '\u00A0' ) );
                                     div.appendChild( document.createTextNode( '\u00A0' ) );
                                 }
                                 else {
-                                    var div = document.getElementById("project1name");
                                     let btn = document.createElement("button");
                                     btn.innerHTML= CV[CV.length-1].project1.split(",")[0][i];
+                                    btn.className="subheading"
                                     div.appendChild(btn);
                                 }
                             }
                         </script>
-                        <p class="post-intro">This is a sentence. Some more text.</p>
-                        <li><a href="#">See more / Download</a></li>
+                        <p id="project1description" class="post-intro"></p>
+                        <script>
+                            var project1desc = document.getElementById('project1description');
+                            project1desc.innerHTML=CV[CV.length-1].project1.split(",")[1];
+                        </script>
+                        <li><a id="project1link" href="">See more / Download</a></li>
+                        <script>
+                            var project1link = document.getElementById('project1link');
+                            project1link.href=CV[CV.length-1].project1.split(",")[2];
+                        </script>
                     </div>
                 </div>
                 <div class="project">
@@ -236,11 +244,35 @@
                         project2img.src=project2photo
                     </script>
                     <div class="post-preview">
-                        <div class="post-title">
-                            <button class="subheading">S</button><button class="subheading">t</button><button class="subheading">a</button><button class="subheading">r</button><button class="subheading">l</button><button class="subheading">i</button><button class="subheading">n</button><button class="subheading">k</button>
+                        <div id="project2name" class="post-title">
+
                         </div>
-                        <p class="post-intro">This is a sentence. Some more text.</p>
-                        <li><a href="#">See more / Download</a></li>
+                        <script>
+                            let project2list = CV[CV.length-1].project2.split(",");
+                            for (var i = 0; i < project2list[0].length; i++) {
+                                var div = document.getElementById("project2name");
+                                if (CV[CV.length-1].project2.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].project2.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="project2description" class="post-intro"></p>
+                        <script>
+                            var project2desc = document.getElementById('project2description');
+                            project2desc.innerHTML=CV[CV.length-1].project2.split(",")[1];
+                        </script>
+                        <li><a id="project2link" href="">See more / Download</a></li>
+                        <script>
+                            var project2link = document.getElementById('project2link');
+                            project2link.href=CV[CV.length-1].project2.split(",")[2];
+                        </script>
                     </div>
                 </div>
                 <div class="project">
@@ -251,13 +283,35 @@
                         project3img.src=project3photo
                     </script>
                     <div class="post-preview">
-                        <div class="post-title">
-                            <button class="subheading">T</button><button class="subheading">h</button><button class="subheading">e</button>
-                            <button class="subheading">F</button><button class="subheading">i</button><button class="subheading">r</button><button class="subheading">s</button><button class="subheading">t</button>
-                            <button class="subheading">M</button><button class="subheading">a</button><button class="subheading">r</button><button class="subheading">t</button><button class="subheading">i</button><button class="subheading">a</button><button class="subheading">n</button>
+                        <div id="project3name" class="post-title">
+
                         </div>
-                        <p class="post-intro">This is a sentence. Some more text.</p>
-                        <li><a href="#">See more / Download</a></li>
+                        <script>
+                            let project3list = CV[CV.length-1].project3.split(",");
+                            for (var i = 0; i < project3list[0].length; i++) {
+                                var div = document.getElementById("project3name");
+                                if (CV[CV.length-1].project3.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].project3.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="project3description" class="post-intro"></p>
+                        <script>
+                            var project3desc = document.getElementById('project3description');
+                            project3desc.innerHTML=CV[CV.length-1].project3.split(",")[1];
+                        </script>
+                        <li><a id="project3link" href="">See more / Download</a></li>
+                        <script>
+                            var project3link = document.getElementById('project3link');
+                            project3link.href=CV[CV.length-1].project3.split(",")[2];
+                        </script>
                     </div>
                 </div>
             </div>
@@ -284,11 +338,10 @@
                     </script>
                     <div class="education-experience-preview">
                         <div id=post-1-title class="education-experience-title">
-                            <button class="subheading">D</button><button class="subheading">a</button><button class="subheading">t</button><button class="subheading">a</button>
-                            <button class="subheading">S</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">c</button><button class="subheading">e</button>
+
                         </div>
                         <p id="post-1-intro" class="education-experience-intro">This is a sentence. Some more text.</p>
-                        <li><a href="#">See more / Download</a></li>
+                        <li><a href="">See more / Download</a></li>
                     </div>
                 </div>
                 <div class="education-experience">
@@ -324,37 +377,120 @@
             </div>
             <div class="projects-wrapper">
                 <div class="project">
-                    <img class="project-img"  src="Other/Sphere.jpg">
+                    <img id="experience1" class="project-img"  src="Other/profile_pic.jpeg">
+                    <script>
+                        let experience1photo = JSON.parse(localStorage.getItem('experience1photo'))
+                        let experience1img = document.getElementById('experience1')
+                        experience1img.src=experience1photo
+                    </script>
                     <div class="post-preview">
-                        <div class="post-title">
-                            <button class="subheading">S</button><button class="subheading">p</button><button class="subheading">h</button><button class="subheading">e</button><button class="subheading">r</button><button class="subheading">e</button>
-                            <button class="subheading">A</button><button class="subheading">P</button><button class="subheading">I</button>
+                        <div id="experience1name" class="post-title">
+
                         </div>
-                        <p id="jobs" class="post-intro">Role: Co-Founder and COO</p>
-                        <p class="post-intro">This is a sentence. Some more text.</p>
-                        <li><a target="_blank" href="https://sphereapi.io/">See more</a></li>
+                        <script>
+                            let experience1list = CV[CV.length-1].experience1.split(",");
+                            for (var i = 0; i < experience1list[0].length; i++) {
+                                var div = document.getElementById("experience1name");
+                                if (CV[CV.length-1].experience1.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].experience1.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="experience1description" class="post-intro"></p>
+                        <script>
+                            var experience1desc = document.getElementById('experience1description');
+                            experience1desc.innerHTML=CV[CV.length-1].experience1.split(",")[1];
+                        </script>
+                        <li><a id="experience1link" href="">See more / Download</a></li>
+                        <script>
+                            var experience1link = document.getElementById('experience1link');
+                            experience1link.href=CV[CV.length-1].experience1.split(",")[2];
+                        </script>
                     </div>
                 </div>
                 <div class="project">
-                    <img class="project-img"  src="Other/ascientia.png">
+                    <img id="experience2" class="project-img"  src="Other/profile_pic.jpeg">
+                    <script>
+                        let experience2photo = JSON.parse(localStorage.getItem('experience2photo'))
+                        let experience2img = document.getElementById('experience2')
+                        experience2img.src=experience2photo
+                    </script>
                     <div class="post-preview">
-                        <div class="post-title">
-                            <button class="subheading">A</button><button class="subheading">s</button><button class="subheading">c</button><button class="subheading">i</button><button class="subheading">e</button><button class="subheading">n</button><button class="subheading">t</button><button class="subheading">i</button><button class="subheading">a</button>
+                        <div id="experience2name" class="post-title">
+
                         </div>
-                        <p id="jobs2" class="post-intro">Role: IB Tutor</p>
-                        <p class="post-intro">This is a sentence. Some more text.</p>
-                        <li><a target="_blank"  href="https://ascientia.org/">See more</a></li>
+                        <script>
+                            let experience2list = CV[CV.length-1].experience2.split(",");
+                            for (var i = 0; i < experience2list[0].length; i++) {
+                                var div = document.getElementById("experience2name");
+                                if (CV[CV.length-1].experience2.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].experience2.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="experience2description" class="post-intro"></p>
+                        <script>
+                            var experience2desc = document.getElementById('experience2description');
+                            experience2desc.innerHTML=CV[CV.length-1].experience2.split(",")[1];
+                        </script>
+                        <li><a id="experience2link" href="">See more / Download</a></li>
+                        <script>
+                            var experience2link = document.getElementById('experience2link');
+                            experience2link.href=CV[CV.length-1].experience2.split(",")[2];
+                        </script>
                     </div>
                 </div>
                 <div class="project">
-                    <img class="project-img"  src="Other/luxmun.jpeg">
+                    <img id="experience3" class="project-img"  src="Other/profile_pic.jpeg">
+                    <script>
+                        let experience3photo = JSON.parse(localStorage.getItem('experience3photo'))
+                        let experience3img = document.getElementById('experience3')
+                        experience3img.src=experience3photo
+                    </script>
                     <div class="post-preview">
-                        <div class="post-title">
-                            <button class="subheading">L</button><button class="subheading">U</button><button class="subheading">X</button><button class="subheading">M</button><button class="subheading">U</button><button class="subheading">N</button>
+                        <div id="experience3name" class="post-title">
+
                         </div>
-                        <p id="jobs3" class="post-intro">Role: Co-Founder and Treasurer</p>
-                        <p class="post-intro">This is a sentence. Some more text.</p>
-                        <li><a target="_blank"  href="https://instagram.com/lux_mun/?hl=en">See more</a></li>
+                        <script>
+                            let experience3list = CV[CV.length-1].experience3.split(",");
+                            for (var i = 0; i < experience3list[0].length; i++) {
+                                var div = document.getElementById("experience3name");
+                                if (CV[CV.length-1].experience3.split(",")[0][i]===' '){
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                    div.appendChild( document.createTextNode( '\u00A0' ) );
+                                }
+                                else {
+                                    let btn = document.createElement("button");
+                                    btn.innerHTML= CV[CV.length-1].experience3.split(",")[0][i];
+                                    btn.className="subheading"
+                                    div.appendChild(btn);
+                                }
+                            }
+                        </script>
+                        <p id="experience3description" class="post-intro"></p>
+                        <script>
+                            var experience3desc = document.getElementById('experience3description');
+                            experience3desc.innerHTML=CV[CV.length-1].experience3.split(",")[1];
+                        </script>
+                        <li><a id="experience3link" href="">See more / Download</a></li>
+                        <script>
+                            var experience3link = document.getElementById('experience3link');
+                            experience3link.href=CV[CV.length-1].experience3.split(",")[2];
+                        </script>
                     </div>
                 </div>
             </div>

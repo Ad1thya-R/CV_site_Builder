@@ -149,3 +149,9 @@ body {
 .submit:active {
     background-color: #06b;
 }
+
+@media screen and (max-width: 600px) {
+    .extend {
+        max-width: 200px;
+    }
+}

@@ -33,13 +33,12 @@
                     </div>
                     <script>
                         for (var i = 0; i < CV[CV.length-1].name.length; i++) {
+                            var div = document.getElementById("whole-name");
                             if (CV[CV.length-1].name[i]===' '){
-                                var div = document.getElementById("whole-name");
                                 div.appendChild( document.createTextNode( '\u00A0' ) );
                                 div.appendChild( document.createTextNode( '\u00A0' ) );
                             }
                             else {
-                                var div = document.getElementById("whole-name");
                                 let btn = document.createElement("button");
                                 btn.innerHTML= CV[CV.length-1].name[i];
                                 div.appendChild(btn);

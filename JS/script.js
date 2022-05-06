@@ -51,11 +51,6 @@ const addInfo = (ev)=>{
     document.forms[0].reset(); // to clear the form for the next entries
     //document.querySelector('form').reset();
 
-    //for display purposes only
-    console.warn('added' , {informations} );
-    let pre = document.querySelector('#msg pre');
-    pre.textContent = '\n' + JSON.stringify(informations, '\t', 2);
-
     //saving to localStorage
     localStorage.setItem('CV', JSON.stringify(informations) );
 }

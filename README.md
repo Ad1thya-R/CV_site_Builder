@@ -95,11 +95,15 @@ Then, the user can interact with the "theme switcher", which allows them to sele
 
 Other than that, they are able to access the various links to other pages with the many "See more" buttons.
 
+## Project Development
 
+I will briefly outline the main development steps 
 
 ### Development of the CV site
 
 The CV Site was built using CSS Grid, with the inspiration for the design of the main page being that of a MacBook tab. I used grid as I felt that given the structure I had envisioned for my website, with the listing of multiple portfolio informations aligned.
+
+I also made sure to use media queries in order to make the output CV site responsive on mobile, with changes to the way the grid behaves in order to have all elements properly responsive on a smaller screen. This was particularly important as I was implementing this either way on my personal portfolio website at https://adithya.eu
 
 I then implemented a "bouncy text" animation when the user hovers over the text (inspired by https://bobangajicsm.github.io/portfolio/). I implmented this using CSS transform with the following parameters:
 
@@ -140,7 +144,89 @@ I then implemented a "bouncy text" animation when the user hovers over the text 
     }
 
    ```
+   This is crucial to allow us to link another css file with variable defined colours (same variable names, different colours).
+   
+   Then, I needed to implement a JavaScript function to actually allow for the theme to switch, which would allow for the themes to switch as well as saving the user's input to local Storage such that it can be recovered whenever they reload the page. This can all be seen in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/script2.js/">script2.js</a> file.
+   
+   Finally, for the implementation of the form, I linked to an external service to take care of the server side needs called <a href="https://formspree.io/">FormSpree</a> 
+   
+   ### Development of the CV Site Builder
+   
+   After developing a reasonable good CV website, I moved onto implementing the Builder. In order to do this, I decided that as opposed to using server side programming (like using PHP), I would stick to the content of the course of CSE104 and implement the builder through storing User input as JSON objects in local storage.
+   
+   Initially, in order to do this, I wrote some javascript to create a dictionary which would save all of the user's input with all of the keys being the different sections and all values being defined as the user's input. This was done as follows in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/script.js/">script.js</a>  file:
+   
+   ```js
+        let informations = [];let informations = [];
+// example {id:1592304983049, title: 'Deadpool', year: 2015}
+const addInfo = (ev)=>{
+    ev.preventDefault();  //to stop the form submitting
+    let information = {
+        id: Date.now(),
+        name: document.getElementById('name').value,
+        about: document.getElementById('about').value,
+        aboutlong: document.getElementById('aboutlong').value,
+        skilllist: document.getElementById('skilllist').value,
+        social1: document.getElementById('social1').value,
+        social2: document.getElementById('social2').value,
+        social3: document.getElementById('social3').value,
+        project1: document.getElementById('project1').value,
+        project2: document.getElementById('project2').value,
+        project3: document.getElementById('project3').value,
+        education1: document.getElementById('education1').value,
+        education2: document.getElementById('education2').value,
+        experience1: document.getElementById('experience1').value,
+        experience2: document.getElementById('experience2').value,
+        experience3: document.getElementById('experience3').value,
+        formspree: document.getElementById('formspree').value,
+    }
+    informations.push(information);
+    document.forms[0].reset(); // to clear the form for the next entries
+    //document.querySelector('form').reset();
 
+    //saving to localStorage
+    localStorage.setItem('CV', JSON.stringify(informations) );
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('btn').addEventListener('click', addInfo);
+});
+
+    const addInfo = (ev)=>{
+        ev.preventDefault();  //to stop the form submitting
+        let information = {
+            id: Date.now(),
+            name: document.getElementById('name').value,
+            about: document.getElementById('about').value,
+            aboutlong: document.getElementById('aboutlong').value,
+            skilllist: document.getElementById('skilllist').value,
+            social1: document.getElementById('social1').value,
+            social2: document.getElementById('social2').value,
+            social3: document.getElementById('social3').value,
+            project1: document.getElementById('project1').value,
+            project2: document.getElementById('project2').value,
+            project3: document.getElementById('project3').value,
+            education1: document.getElementById('education1').value,
+            education2: document.getElementById('education2').value,
+            experience1: document.getElementById('experience1').value,
+            experience2: document.getElementById('experience2').value,
+            experience3: document.getElementById('experience3').value,
+            formspree: document.getElementById('formspree').value,
+        }
+        informations.push(information);
+        document.forms[0].reset(); // to clear the form for the next entries
+        //document.querySelector('form').reset();
+
+        //saving to localStorage
+        localStorage.setItem('CV', JSON.stringify(informations) );
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+        document.getElementById('btn').addEventListener('click', addInfo);
+    });
+
+
+   ```
+   
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -154,19 +240,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/Ad1thya-R/CV_site_Builder/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 

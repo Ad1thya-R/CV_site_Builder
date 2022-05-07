@@ -19,12 +19,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -53,40 +47,17 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+This project was a part of my university web programming course (CSE104), with the objective of developing a dynamic, interactive, standard compliant, website using client based programming (html, css, js). 
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+It was required that the project had the following elements:
+* General structure defined clearly in valid current HTML.
+* General design/appearance defined in valid CSS.
+* Interaction with the user, based on JavaScript
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -112,10 +83,9 @@ The following section will describe a simple exploration of the functionalities 
 The user's interactions with the built CV website involve a few standard interactive features which have been implemented. Firstly, when hovering over any of the headers, the "bouncy text" animation gets triggered.
 
 Then, the user can interact with the "theme switcher", which allows them to select one among 3 different default colour themes to set for their website. Their selection is then kept for any future visits of the webpage.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+
+Other than that, they are able to access the various links to other pages with the many "See more" buttons 
+
 
 ### Installation
 

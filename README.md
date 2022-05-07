@@ -35,10 +35,10 @@
     <img src="images/cvbuilder.jpg" alt="Logo" width="800">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">CV Site Builder</h3>
 
   <p align="center">
-    project_description
+    As an extension to designing my portfolio website (which you can visit at https://adithya.eu), I decided to create a tool that would allow anyone to turn their CV into a website. I used HTML5, CSS and vanilla JavaScript, without any libraries.
     <br />
     <a href="https://github.com/Ad1thya-R/CV_site_Builder"><strong>Explore the docs »</strong></a>
     <br />

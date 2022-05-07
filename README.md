@@ -146,7 +146,7 @@ I then implemented a "bouncy text" animation when the user hovers over the text 
    ```
    This is crucial to allow us to link another css file with variable defined colours (same variable names, different colours).
    
-   Then, I needed to implement a JavaScript function to actually allow for the theme to switch, which would allow for the themes to switch as well as saving the user's input to local Storage such that it can be recovered whenever they reload the page. This can all be seen in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/script2.js/">script2.js</a> file.
+   Then, I needed to implement a JavaScript function to actually allow for the theme to switch, which would allow for the themes to switch as well as saving the user's input to local Storage such that it can be recovered whenever they reload the page. This can all be seen in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/blob/main/JS/script2.js">script2.js</a> file.
    
    Finally, for the implementation of the form, I linked to an external service to take care of the server side needs called <a href="https://formspree.io/">FormSpree</a> 
    
@@ -154,7 +154,7 @@ I then implemented a "bouncy text" animation when the user hovers over the text 
    
    After developing a reasonable good CV website, I moved onto implementing the Builder. In order to do this, I decided that as opposed to using server side programming (like using PHP), I would stick to the content of the course of CSE104 and implement the builder through storing User input as JSON objects in local storage.
    
-   Initially, in order to do this, I wrote some javascript to create a dictionary which would save all of the user's input with all of the keys being the different sections and all values being defined as the user's input. This was done as follows in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/script.js/">script.js</a>  file:
+   Initially, in order to do this, I wrote some javascript to create a dictionary which would save all of the user's input with all of the keys being the different sections and all values being defined as the user's input. This was done as follows in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/blob/main/JS/script.js">script.js</a>  file:
    
    ```js
    const addInfo = (ev)=>{
@@ -204,7 +204,7 @@ Then, in order for the input to be converted back to respond to the website, for
        aboutimg.src=aboutphoto
     </script>
    ```
-   This process was then repeated with all sections, with some proving slightly trickier than others, with the need of loops iterating over the string input of the user. All such implementations can be found in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/built.html/">built.html</a> file.
+   This process was then repeated with all sections, with some proving slightly trickier than others, with the need of loops iterating over the string input of the user. All such implementations can be found in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/blob/main/built.html/">built.html</a> file.
    
 <p align="right">(<a href="#top">back to top</a>)</p>
 

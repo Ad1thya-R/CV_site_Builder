@@ -157,41 +157,7 @@ I then implemented a "bouncy text" animation when the user hovers over the text 
    Initially, in order to do this, I wrote some javascript to create a dictionary which would save all of the user's input with all of the keys being the different sections and all values being defined as the user's input. This was done as follows in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/script.js/">script.js</a>  file:
    
    ```js
-        let informations = [];let informations = [];
-// example {id:1592304983049, title: 'Deadpool', year: 2015}
-const addInfo = (ev)=>{
-    ev.preventDefault();  //to stop the form submitting
-    let information = {
-        id: Date.now(),
-        name: document.getElementById('name').value,
-        about: document.getElementById('about').value,
-        aboutlong: document.getElementById('aboutlong').value,
-        skilllist: document.getElementById('skilllist').value,
-        social1: document.getElementById('social1').value,
-        social2: document.getElementById('social2').value,
-        social3: document.getElementById('social3').value,
-        project1: document.getElementById('project1').value,
-        project2: document.getElementById('project2').value,
-        project3: document.getElementById('project3').value,
-        education1: document.getElementById('education1').value,
-        education2: document.getElementById('education2').value,
-        experience1: document.getElementById('experience1').value,
-        experience2: document.getElementById('experience2').value,
-        experience3: document.getElementById('experience3').value,
-        formspree: document.getElementById('formspree').value,
-    }
-    informations.push(information);
-    document.forms[0].reset(); // to clear the form for the next entries
-    //document.querySelector('form').reset();
-
-    //saving to localStorage
-    localStorage.setItem('CV', JSON.stringify(informations) );
-}
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', addInfo);
-});
-
-    const addInfo = (ev)=>{
+   const addInfo = (ev)=>{
         ev.preventDefault();  //to stop the form submitting
         let information = {
             id: Date.now(),
@@ -222,24 +188,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.addEventListener('DOMContentLoaded', ()=>{
         document.getElementById('btn').addEventListener('click', addInfo);
     });
-
-
+    
    ```
-   
+Then, in order for the input to be converted back to respond to the website, for each section, I implemented some more javascript code such that all user input would appear on the CV site when the user presses submit. This first involved converting the JSON object back to a string and then modifying the specific div that the piece of information is for. An example for the "About Me" section is as follows:   
+
+   ```js
+    <p id="about-long"></p>
+    <img id="aboutphoto" class="profile-pic" src="">
+    <script>
+       var aboutlong = document.getElementById('about-long')
+       aboutlong.innerHTML=CV[CV.length-1].aboutlong
+
+       let aboutphoto = JSON.parse(localStorage.getItem('aboutphoto'))
+       let aboutimg = document.getElementById('aboutphoto')
+       aboutimg.src=aboutphoto
+    </script>
+   ```
+   This process was then repeated with all sections, with some proving slightly trickier than others, with the need of loops iterating over the string input of the user. All such implementations can be found in the <a href="https://github.com/Ad1thya-R/CV_site_Builder/JS/built.html/">built.html</a> file.
    
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 
@@ -260,13 +227,6 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 

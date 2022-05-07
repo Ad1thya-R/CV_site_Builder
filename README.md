@@ -37,7 +37,7 @@
     <a href="https://github.com/Ad1thya-R/CV_site_Builder"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Ad1thya-R/CV_site_Builder">View Demo</a>
+    <a href="https://ad1thya-r.github.io/CV_site_Builder">View Demo</a>
     ·
     <a href="https://github.com/Ad1thya-R/CV_site_Builder/issues">Report Bug</a>
     ·
@@ -76,7 +76,16 @@ It was required that the project had the following elements:
 <!-- GETTING STARTED -->
 ## User Usage
 
-The following section will describe a simple exploration of the functionalities of both the CV Builder site and the CV site from a User standpoint
+The following section will describe a simple exploration of the functionalities of both the CV Builder site and the CV site from a User standpoint.
+
+
+### CV Builder Usage
+
+The user must input in all fields to have a fully functioning CV site. Unfortunately, I did not implement the ability to customise the number of project inputs, education inputs and experience inputs. 
+
+The use must also separate all fields by commas where they are shown. This holds true with the skills, social media, projects, education and experience sections.
+
+The image uploads are not truly restricted to a specific file format, however it is recommended for the user to use relatively smaller memory files, as the local Storage in which these files are kept is restricted in space and the loading time of the images when not cached on ones machine (i.e. when somebody loads the user's CV website for the first time) can be quite long.
 
 ### CV Site Usage
 
@@ -84,23 +93,52 @@ The user's interactions with the built CV website involve a few standard interac
 
 Then, the user can interact with the "theme switcher", which allows them to select one among 3 different default colour themes to set for their website. Their selection is then kept for any future visits of the webpage.
 
-Other than that, they are able to access the various links to other pages with the many "See more" buttons 
+Other than that, they are able to access the various links to other pages with the many "See more" buttons.
 
 
-### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/Ad1thya-R/CV_site_Builder.git
+### Development of the CV site
+
+The CV Site was built using CSS Grid, with the inspiration for the design of the main page being that of a MacBook tab. I used grid as I felt that given the structure I had envisioned for my website, with the listing of multiple portfolio informations aligned.
+
+I then implemented a "bouncy text" animation when the user hovers over the text (inspired by https://bobangajicsm.github.io/portfolio/). I implmented this using CSS transform with the following parameters:
+
+   ```css
+    @keyframes animate {
+      25%{
+          transform: scale(0.8,1.3);
+      }
+      50%{
+          transform: scale(1.1,0.8);
+      }
+      75%{
+          transform: scale(0.7,1.2);
+      }
+     }
+
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   The other "big" interactive feature as far as the CV Website is concerned is the implmentation of the theme switcher. There were 2 main elements to achieving a working theme switcher. Firstly, I implmented all of the main colours of the website in a variable based manner in CSS, as follows:
+   
+   ```css
+    :root{
+      --mainColor:#eaeaea;
+      --secondaryColor:#fff;
+
+      --borderColor:#c1c1c1;
+
+      --mainText:black;
+      --secondaryText:#4b5156;
+
+      --themeDotborder:#24292e;
+
+      --previewColor:rgba(234,234,234,0.8);
+      --prevShadow:#01426a;
+
+      --polytechnique:rgba(255,255,255,0);
+      --bouncyhover:#01426a;
+      --linkcolor: #01426a;
+    }
+
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
